@@ -1,0 +1,215 @@
+:root {
+  --primary: #4a6fa5;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --pomodoro-red: #e74c3c;
+  --pomodoro-green: #2ecc71;
+  --pomodoro-blue: #3498db;
+}
+
+body {
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary), var(--pomodoro-blue));
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+}
+
+/* Pomodoro Timer Styles */
+#tree-container {
+  position: relative;
+  margin: 30px auto;
+  width: 220px;
+  height: 220px;
+  perspective: 1000px;
+}
+
+#tree {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--pomodoro-green), #27ae60);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(46, 204, 113, 0.3);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform-style: preserve-3d;
+}
+
+#tree:hover {
+  transform: scale(1.05) rotateY(5deg);
+}
+
+#timer-display {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+  background: linear-gradient(to right, var(--pomodoro-green), #27ae60);
+}
+
+.btn-warning {
+  background: linear-gradient(to right, var(--warning), #e6b800);
+}
+
+.btn-danger {
+  background: linear-gradient(to right, var(--pomodoro-red), #c0392b);
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Task List Styles */
+.task-item {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid transparent;
+}
+
+.task-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+  border-left-color: var(--pomodoro-green);
+  opacity: 0.8;
+}
+
+.task-item.high-priority {
+  border-left-color: var(--pomodoro-red);
+}
+
+/* Priority Badges */
+.priority-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.bg-priority-1 { background-color: #4a6fa5; color: white; }
+.bg-priority-2 { background-color: #5cb85c; color: white; }
+.bg-priority-3 { background-color: #f0ad4e; color: white; }
+.bg-priority-4 { background-color: #e67e22; color: white; }
+.bg-priority-5 { background-color: #e74c3c; color: white; }
+
+/* Form Elements */
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(74, 111, 165, 0.25);
+}
+
+/* Active Duration Button */
+[data-duration].active {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(74, 111, 165, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #timer-display {
+    font-size: 2.2rem;
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation Classes */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a5a8a;
+}
