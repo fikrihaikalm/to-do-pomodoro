@@ -15,10 +15,10 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Date</th>
+                                        <th>Tanggal</th>
                                         <th>Task</th>
-                                        <th>Duration</th>
-                                        <th>Completed Time</th>
+                                        <th>Durasi</th>
+                                        <th>Waktu Selesai</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>

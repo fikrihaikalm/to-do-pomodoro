@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // CSRF Token
     const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
-    // Helper functions
     const formatTime = (seconds) => {
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Timer functions
+    // Timer
     const startTimer = (minutes) => {
         if (state.isRunning) return;
         
@@ -47,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         state.timeLeft = minutes * 60;
         state.isRunning = true;
         
-        // Update UI
         elements.durationBtns.forEach(btn => btn.disabled = true);
         elements.customDuration.disabled = true;
         elements.taskSelect.disabled = true;
@@ -55,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.pauseBtn.disabled = false;
         elements.stopBtn.disabled = false;
         
-        // Start session
+        // Start 
         fetch('/pomodoro/start', {
             method: 'POST',
             headers: {

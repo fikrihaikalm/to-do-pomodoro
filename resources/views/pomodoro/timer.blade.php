@@ -17,15 +17,15 @@
                     
                     <div class="mb-3">
                         <select id="task-select" class="form-select">
-                            <option value="">-- Select a Task (Optional) --</option>
+                            <option value="">-- Pilih Task (Optional) --</option>
                             @forelse($tasks as $task)
                                 <option value="{{ $task->id }}">{{ $task->title }}</option>
                             @empty
-                                <option value="" disabled>No tasks available</option>
+                                <option value="" disabled>Tidak Ada Task Tersedia</option>
                             @endforelse
                         </select>
                         @if($tasks->isEmpty())
-                            <small class="text-muted"><a href="{{ route('tasks.create') }}">Create your first task</a></small>
+                            <small class="text-muted"><a href="{{ route('tasks.create') }}">Buat Task Baru</a></small>
                         @endif
                     </div>
                     
@@ -37,9 +37,9 @@
                     </div>
                     
                     <div>
-                        <button id="start-btn" class="btn btn-success btn-lg">Start</button>
-                        <button id="pause-btn" class="btn btn-warning btn-lg" disabled>Pause</button>
-                        <button id="stop-btn" class="btn btn-danger btn-lg" disabled>Stop</button>
+                        <button id="start-btn" class="btn btn-success btn-lg">Mulai</button>
+                        <button id="pause-btn" class="btn btn-warning btn-lg" disabled>Jeda</button>
+                        <button id="stop-btn" class="btn btn-danger btn-lg" disabled>Berhenti</button>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-header bg-info text-white">
-                        <h3>Today's Tasks</h3>
+                        <h3>Tasks Hari Ini</h3>
                     </div>
                     <div class="card-body">
                         <!-- @forelse($tasks as $task)
@@ -100,7 +100,7 @@
             <div class="col-md-6">
                 <div class="card h-100">
                     <div class="card-header bg-secondary text-white">
-                        <h3>Recent Sessions</h3>
+                        <h3>Sesi Terakhir</h3>
                     </div>
                     <div class="card-body">
                         @forelse($recentSessions as $session)

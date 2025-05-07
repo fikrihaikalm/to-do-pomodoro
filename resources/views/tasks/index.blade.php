@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h3>Tasks</h3>
-                    <a href="{{ route('tasks.create') }}" class="btn btn-success">Add New Task</a>
+                    <a href="{{ route('tasks.create') }}" class="btn btn-success">Tambah Task Baru</a>
                 </div>
 
                 <div class="card-body">
@@ -21,8 +21,8 @@
                                 <tr>
                                     <th>Status</th>
                                     <th>Task</th>
-                                    <th>Priority</th>
-                                    <th>Due Date</th>
+                                    <th>Prioritas</th>
+                                    <th>Tenggat Waktu</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>

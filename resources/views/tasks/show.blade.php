@@ -18,7 +18,7 @@
                     <p class="text-muted">Created: {{ $task->created_at->format('M d, Y H:i') }}</p>
                     
                     <div class="mb-3">
-                        <strong>Priority:</strong>
+                        <strong>Prioritas:</strong>
                         <span class="badge bg-{{ $task->priority >= 4 ? 'danger' : ($task->priority >= 3 ? 'warning' : 'primary') }}">
                             {{ $task->priority }}
                         </span>
@@ -26,12 +26,12 @@
 
                     @if($task->due_date)
                     <div class="mb-3">
-                        <strong>Due Date:</strong> {{ $task->due_date->format('M d, Y H:i') }}
+                        <strong>Tenggat Waktu:</strong> {{ $task->due_date->format('M d, Y H:i') }}
                     </div>
                     @endif
 
                     <div class="mb-3">
-                        <strong>Description:</strong>
+                        <strong>Deskripsi:</strong>
                         <p>{{ $task->description ?? 'No description' }}</p>
                     </div>
 
